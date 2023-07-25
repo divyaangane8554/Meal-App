@@ -6,42 +6,92 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
     background-image: url("bg.jpg");
     background-position: center;
     background-size: cover;
   }
   
-
-/* Style for header */
-header{
+  header {
+    width: 30%;
+    background-color: #d9c76f9c;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+    border-radius: 30px;
+  }
+  
+  .head {
     display: flex;
-    margin: 20px;
-}
-
-/* Style for logo image */
-#logo{
-    height: 40px;
-}
-
-/* Style for header links */
-header a{
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .header-link {
+    color: #150d0d;
     text-decoration: none;
-    font-size: 30px;
-    margin: 10px;
-    font-size: 1.6rem;
-}
-
-/* Style for header links on hover */
-header a:hover{
-    text-decoration: underline;
-}
+    padding: 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .header-link:hover {
+    color: #826e1b;
+  }
+  
+  .container {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  #search-input {
+    padding: 10px;
+    width: 300px;
+  }
+  
+  #search-button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #search-button:hover {
+    background-color: #ffdd33;
+  }
+  
+  #search-results {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  /* Add animation for the header */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  header {
+    animation: slideIn 0.5s ease;
+  }
+  
 
 /* Style for container */
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #a4b6da;
+  background: #dfa182;
   border-radius: 30px;
   padding-left: 20px;
   margin-bottom: 25px;
@@ -128,13 +178,18 @@ button{
     background-color: #ddd;
 }
 
-.description {
-    display: none;
+.description,
+.ingredients {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
-  
-.show {
-    display: block;
+
+.description.show,
+.ingredients.show {
+  max-height: 500px;
 }
+
 
 p{
     font-size: 20px;
@@ -146,5 +201,25 @@ p{
     background-color: orange;
     border-radius: 20px;
     padding: 5px;
-    
 }
+  
+  /* The element to apply the animation to meal-name*/
+
+  @keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }
+  
+  /* The element to apply the animation to */
+  h2.meal-name {
+    width: 100px;
+    height: 50px;
+    padding-top: 10px;
+    border-radius: 30px;
+    background-color: rgb(193, 164, 164);
+    animation-name: example;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+  }
