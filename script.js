@@ -6,6 +6,7 @@ const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const searchResults = document.getElementById("search-results");
 const favButton = document.getElementById("fav");
+const homeButton = document.getElementById("home");
 const resetButton = document.getElementById("reset");
 // functions fetching from api
 function searchMeals() {
@@ -144,6 +145,17 @@ function showFavorites() {
 // Event listeners
 searchButton.addEventListener("click", searchMeals);
 favButton.addEventListener("click", showFavorites);
-resetButton.addEventListener("click", function () {
+homeButton.addEventListener("click", function () {
   searchResults.innerHTML = "";
+});
+
+resetButton.addEventListener("click", function () {
+  // Clear the search results
+  searchResults.innerHTML = "";
+
+  // Clear the favorite list
+  favorites = [];
+
+  // Clear the search history by resetting the input value
+  searchInput.value = "";
 });
