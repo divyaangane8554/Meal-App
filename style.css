@@ -214,9 +214,9 @@ p{
   
   /* The element to apply the animation to */
   h2.meal-name {
-    width: 100px;
-    height: 50px;
-    padding-top: 10px;
+    width: auto;
+    height: auto;
+    padding: 5px;
     border-radius: 30px;
     background-color: rgb(193, 164, 164);
     animation-name: example;
